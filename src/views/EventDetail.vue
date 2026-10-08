@@ -1,3 +1,8 @@
+<script setup>
+import AppButton from '@/components/ui/AppButton.vue'
+import AppCard from '@/components/ui/AppCard.vue'
+</script>
+
 <template>
   <div class="event-detail-page">
     <button @click="$router.push('/browse/events')" class="btn-back">&larr; Back to Events</button>
@@ -6,15 +11,15 @@
       <span class="event-tag">Workshop & Training</span>
       <h1>Vue.js Mastery Workshop {{ $route.params.id }}</h1>
       <div class="meta-info">
-        <span class="meta-item">📅 October 12, 2026</span>
-        <span class="meta-item">📍 Tech Hub, Jakarta Pusat</span>
-        <span class="meta-item">👥 Quota: 150 Attendees</span>
+        <span class="meta-item">&#128197; October 12, 2026</span>
+        <span class="meta-item">&#128205; Tech Hub, Jakarta Pusat</span>
+        <span class="meta-item">&#128101; Quota: 150 Attendees</span>
       </div>
     </div>
 
     <!-- ASYMMETRICAL LAYOUT -->
     <div class="detail-content grid-asymmetric">
-      <!-- F-PATTERN: Breaking text with Headings & Bullet Points -->
+      <!-- F-Pattern: Breaking text with Headings & Bullet Points -->
       <div class="main-desc">
         <h2>About This Event</h2>
         <p>
@@ -41,14 +46,16 @@
 
       <!-- FOCAL POINT & STICKY PANE -->
       <div class="sidebar">
-        <div class="ticket-card sticky-pane">
+        <AppCard class="ticket-card sticky-pane">
           <h3>Attendee Registration</h3>
           <p class="price">Free</p>
           <p class="ticket-desc">Secure your seat now before the quota is full.</p>
+
           <!-- STRONGEST FOCAL POINT -->
-          <button class="btn-register">Register Now</button>
+          <AppButton variant="primary" class="btn-register"> Register Now </AppButton>
+
           <p class="spots">Only 12 seats left!</p>
-        </div>
+        </AppCard>
       </div>
     </div>
   </div>
@@ -76,8 +83,8 @@
   color: var(--primary);
   padding: var(--space-1) var(--space-4);
   border-radius: 50px;
-  font-size: 0.9rem;
   font-weight: 600;
+  font-size: 0.9rem;
   margin-bottom: var(--space-4);
 }
 .detail-header h1 {
@@ -117,7 +124,7 @@
 .agenda-list {
   list-style: none;
   padding: 0;
-  margin: 0 var(--space-8) 0;
+  margin: 0 0 var(--space-8) 0;
 }
 .agenda-list li {
   padding: var(--space-3) 0;
@@ -128,11 +135,7 @@
 
 /* FOCAL POINT CARD */
 .ticket-card {
-  background: white;
   padding: var(--space-8);
-  border-radius: var(--space-4);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   text-align: center;
 }
 
@@ -156,20 +159,8 @@
   color: var(--text-muted);
   margin-bottom: var(--space-6);
 }
-
 .btn-register {
   width: 100%;
-  padding: var(--space-4);
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-.btn-register:hover {
-  background: var(--primary-hover);
 }
 .spots {
   margin-top: var(--space-4);
