@@ -172,7 +172,7 @@ defineEmits(['view-detail', 'complete', 'delete'])
 
 .btn-delete {
   color: #e63946;
-  border-color: rgba(230, 57, 70, 0.3);
+  border-color: rgba(230, 57, 78, 0.3);
   flex: 0 0 auto;
 }
 
